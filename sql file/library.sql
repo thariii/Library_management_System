@@ -186,7 +186,8 @@ CREATE TABLE `tblinventory` (
   `Type` varchar(50) DEFAULT NULL,
   `Category` varchar(50) DEFAULT NULL,
   `quantity` int(4) DEFAULT NULL,
-  `Date` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+  `Date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `description` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -283,9 +284,6 @@ ALTER TABLE `tblissuedbookdetails`
 ALTER TABLE `tblstudents`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
-ALTER TABLE 'tblinventory'
-	ADD `description` VARCHAR(500) NOT NULL AFTER `Date`
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
