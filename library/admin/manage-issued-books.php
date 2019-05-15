@@ -12,7 +12,7 @@ else{
 
     ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:color="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -143,12 +143,14 @@ foreach($results as $result)
                 </div>
             </div>
 
-
+             <a href="http://localhost/Online-Library-Management-System/Online%20Library%20Management%20System/library/admin/issueBookReport.php" >View Report</a>
             
     </div>
     </div>
 
-     <!-- CONTENT-WRAPPER SECTION END-->
+
+
+      <!-- CONTENT-WRAPPER SECTION END-->
   <?php include('includes/footer.php');?>
       <!-- FOOTER SECTION END-->
     <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
