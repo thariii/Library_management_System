@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "library_itp";
+$dbname = "library";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);

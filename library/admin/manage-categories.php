@@ -156,11 +156,7 @@ foreach($results as $result)
                 </div>
             </div>
 
-<<<<<<< HEAD
-
-=======
-             <a href="http://localhost/Online-Library-Management-System/Online%20Library%20Management%20System/library/admin/categortReport.php" >View Report</a>
->>>>>>> ee5b3a80afef05d33093f7e5ee32e1c679c0a22e
+             <a href="categortReport.php">View Report</a>
             
     </div>
     </div>

@@ -146,23 +146,15 @@ foreach($results as $result)
                     <!--End Advanced Tables -->
                 </div>
             </div>
-
-<<<<<<< HEAD
-
-=======
-             <a href="http://localhost/Online-Library-Management-System/Online%20Library%20Management%20System/library/admin/issueBookReport.php" >View Report</a>
->>>>>>> ee5b3a80afef05d33093f7e5ee32e1c679c0a22e
+             <a href="issueBookReport.php">View Report</a>
             
     </div>
     </div>
 
-<<<<<<< HEAD
      <!-- CONTENT-WRAPPER SECTION END-->
-=======
 
 
       <!-- CONTENT-WRAPPER SECTION END-->
->>>>>>> ee5b3a80afef05d33093f7e5ee32e1c679c0a22e
   <?php include('includes/footer.php');?>
       <!-- FOOTER SECTION END-->
     <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
