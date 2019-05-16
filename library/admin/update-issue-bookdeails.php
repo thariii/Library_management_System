@@ -114,10 +114,13 @@ $query->bindParam(':rid',$rid,PDO::PARAM_STR);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
 $cnt=1;
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> ee5b3a80afef05d33093f7e5ee32e1c679c0a22e
 if($query->rowCount() > 0)
 {
 foreach($results as $result)
@@ -164,6 +167,7 @@ foreach($results as $result)
 <div class="form-group">
 <label>Fine (in USD) :</label>
 <?php 
+<<<<<<< HEAD
 
 $date1 =date("Y-m-d");
 $date2 =$result->IssuesDate;
@@ -193,6 +197,11 @@ else{
 if($result->fine=="")
 {?>
 <input class="form-control" type="text" name="fine" id="fine" value="<?php echo htmlentities($resultFine);?>"  required />
+=======
+if($result->fine=="")
+{?>
+<input class="form-control" type="text" name="fine" id="fine"  required />
+>>>>>>> ee5b3a80afef05d33093f7e5ee32e1c679c0a22e
 
 <?php }else {
 echo htmlentities($result->fine);

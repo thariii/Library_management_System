@@ -35,6 +35,7 @@
                                 </ul>
                             </li>
                             <li>
+<<<<<<< HEAD
                                 <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown"> Manage Fines <i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="Book_OverDue.php">Over Due</a></li>
@@ -42,6 +43,8 @@
                                 </ul>
                             </li>
                             <li>
+=======
+>>>>>>> ee5b3a80afef05d33093f7e5ee32e1c679c0a22e
                                 <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown"> Authors <i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="add-author.php">Add Author</a></li>
