@@ -156,7 +156,7 @@ foreach($results as $result)
                 </div>
             </div>
 
-
+             <a href="http://localhost/Online-Library-Management-System/Online%20Library%20Management%20System/library/admin/categortReport.php" >View Report</a>
             
     </div>
     </div>
