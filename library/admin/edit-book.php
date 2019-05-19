@@ -92,11 +92,16 @@ foreach($results as $result)
 <div class="form-group">
 <label> Category<span style="color:red;">*</span></label>
 <select class="form-control" name="category" required="required">
+<<<<<<< HEAD
 <option value="<?php echo htmlentities($result->cid);?>"> <?php echo htmlentities($catname=$result->Category);?></option>
+=======
+<option value="<?php echo htmlentities($result->cid);?>"> <?php echo htmlentities($catname=$result->CategoryName);?></option>
+>>>>>>> 4185aa523a25502b0482b864bb9d9dd4d8541309
 <?php 
 $status=1;
 $sql1 = "SELECT * from  tblcategory where Status=:status";
 $query1 = $dbh -> prepare($sql1);
+<<<<<<< HEAD
 $query1->execute();
 $results=$query1->fetchAll(PDO::FETCH_OBJ);
 if($query1->rowCount() > 0)
@@ -104,13 +109,27 @@ if($query1->rowCount() > 0)
 foreach($results as $row)
 {           
 if($catname==$row->Category)
+=======
+$query1-> bindParam(':status',$status, PDO::PARAM_STR);
+$query1->execute();
+$resultss=$query1->fetchAll(PDO::FETCH_OBJ);
+if($query1->rowCount() > 0)
+{
+foreach($resultss as $row)
+{           
+if($catname==$row->CategoryName)
+>>>>>>> 4185aa523a25502b0482b864bb9d9dd4d8541309
 {
 continue;
 }
 else
 {
     ?>  
+<<<<<<< HEAD
 <option value="<?php echo htmlentities($row->CategoryName);?>"><?php echo htmlentities($row->Category);?></option>
+=======
+<option value="<?php echo htmlentities($row->id);?>"><?php echo htmlentities($row->CategoryName);?></option>
+>>>>>>> 4185aa523a25502b0482b864bb9d9dd4d8541309
  <?php }}} ?> 
 </select>
 </div>

@@ -65,6 +65,7 @@ header('location:manage-books.php');
         <div class="row pad-botm">
             <div class="col-md-12">
                 <h4 class="header-line">Add Book</h4>
+<<<<<<< HEAD
                 
                             </div>
 
@@ -81,6 +82,22 @@ Book Info
 <label>Book Name<span style="color:red;">*</span></label>
 <input class="form-control" type="text" name="bookname" autocomplete="off"  required />
 </div>
+=======
+            </div>
+        </div>
+        <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3"">
+        <div class="panel panel-info">
+        <div class="panel-heading">
+        Book Info
+        </div>
+        <div class="panel-body">
+        <form role="form" method="post">
+            <div class="form-group">
+                <label>Book Name<span style="color:red;">*</span></label>
+                <input class="form-control" type="text" name="bookname" autocomplete="off"  required />
+            </div>
+>>>>>>> 4185aa523a25502b0482b864bb9d9dd4d8541309
 
 <div class="form-group">
 <label> Category<span style="color:red;">*</span></label>

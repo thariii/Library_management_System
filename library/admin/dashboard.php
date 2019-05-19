@@ -37,6 +37,7 @@ else{?>
         <div class="row pad-botm">
             <div class="col-md-12">
                 <h4 class="header-line">ADMIN DASHBOARD</h4>
+<<<<<<< HEAD
                 
                             </div>
 
@@ -47,6 +48,19 @@ else{?>
  <div class="col-md-3 col-sm-3 col-xs-6">
                       <div class="alert alert-success back-widget-set text-center">
                             <i class="fa fa-book fa-5x"></i>
+=======
+            </div>
+
+        </div>
+             
+        <div class="row">
+
+            <div class="col-md-3 col-sm-3 col-xs-6">
+                      
+        <div class="alert alert-success back-widget-set text-center">
+                            
+                  <i class="fa fa-book fa-5x"></i>
+>>>>>>> 4185aa523a25502b0482b864bb9d9dd4d8541309
 <?php 
 $sql ="SELECT id from tblbooks ";
 $query = $dbh -> prepare($sql);
@@ -153,6 +167,7 @@ $listdcats=$query5->rowCount();
 
         </div>             
 
+<<<<<<< HEAD
 
 
 
@@ -174,6 +189,9 @@ $listdcats=$query5->rowCount();
 
 
              <div class="row">
+=======
+        <div class="row">
+>>>>>>> 4185aa523a25502b0482b864bb9d9dd4d8541309
 
               <div class="col-md-10 col-sm-8 col-xs-12 col-md-offset-1">
                     <div id="carousel-example" class="carousel slide slide-bdr" data-ride="carousel" >

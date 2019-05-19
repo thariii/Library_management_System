@@ -114,6 +114,16 @@ $query->bindParam(':rid',$rid,PDO::PARAM_STR);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
 $cnt=1;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+
+
+
+=======
+>>>>>>> ee5b3a80afef05d33093f7e5ee32e1c679c0a22e
+>>>>>>> 4185aa523a25502b0482b864bb9d9dd4d8541309
 if($query->rowCount() > 0)
 {
 foreach($results as $result)
@@ -160,9 +170,47 @@ foreach($results as $result)
 <div class="form-group">
 <label>Fine (in USD) :</label>
 <?php 
+<<<<<<< HEAD
 if($result->fine=="")
 {?>
 <input class="form-control" type="text" name="fine" id="fine"  required />
+=======
+<<<<<<< HEAD
+
+$date1 =date("Y-m-d");
+$date2 =$result->IssuesDate;
+
+$diff = abs(strtotime($date2) - strtotime($date1));
+
+$years = floor($diff / (365*60*60*24));
+$months = floor(($diff - $years * 365*60*60*24) / (30*60*60*24));
+$days = floor(($diff - $years * 365*60*60*24 - $months*30*60*60*24)/ (60*60*24))+1;
+
+if($days<=7){
+
+$resultFine="No Fines to pay";
+}
+
+else{
+    $resultFine=($days-7)*10;
+
+
+
+}
+
+
+
+
+
+if($result->fine=="")
+{?>
+<input class="form-control" type="text" name="fine" id="fine" value="<?php echo htmlentities($resultFine);?>"  required />
+=======
+if($result->fine=="")
+{?>
+<input class="form-control" type="text" name="fine" id="fine"  required />
+>>>>>>> ee5b3a80afef05d33093f7e5ee32e1c679c0a22e
+>>>>>>> 4185aa523a25502b0482b864bb9d9dd4d8541309
 
 <?php }else {
 echo htmlentities($result->fine);
