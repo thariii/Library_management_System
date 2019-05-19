@@ -115,12 +115,15 @@ $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
 $cnt=1;
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 
 
 
 
 =======
 >>>>>>> ee5b3a80afef05d33093f7e5ee32e1c679c0a22e
+>>>>>>> 4185aa523a25502b0482b864bb9d9dd4d8541309
 if($query->rowCount() > 0)
 {
 foreach($results as $result)
@@ -168,6 +171,11 @@ foreach($results as $result)
 <label>Fine (in USD) :</label>
 <?php 
 <<<<<<< HEAD
+if($result->fine=="")
+{?>
+<input class="form-control" type="text" name="fine" id="fine"  required />
+=======
+<<<<<<< HEAD
 
 $date1 =date("Y-m-d");
 $date2 =$result->IssuesDate;
@@ -202,6 +210,7 @@ if($result->fine=="")
 {?>
 <input class="form-control" type="text" name="fine" id="fine"  required />
 >>>>>>> ee5b3a80afef05d33093f7e5ee32e1c679c0a22e
+>>>>>>> 4185aa523a25502b0482b864bb9d9dd4d8541309
 
 <?php }else {
 echo htmlentities($result->fine);

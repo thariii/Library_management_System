@@ -120,6 +120,17 @@ header('location:manage-authors.php');
                                         </tr>
                                     </thead>
                                     <tbody>
+<<<<<<< HEAD
+<?php $sql = "SELECT * from  tblauthors";
+$query = $dbh -> prepare($sql);
+$query->execute();
+$results=$query->fetchAll(PDO::FETCH_OBJ);
+$cnt=1;
+if($query->rowCount() > 0)
+{
+foreach($results as $result)
+{               ?>                                      
+=======
                                         <?php $sql = "SELECT * from  tblauthors";
                                             $query = $dbh -> prepare($sql);
                                             $query->execute();
@@ -130,6 +141,7 @@ header('location:manage-authors.php');
                                             foreach($results as $result)
                                             {               
                                         ?>                                      
+>>>>>>> 4185aa523a25502b0482b864bb9d9dd4d8541309
                                         <tr class="odd gradeX">
                                             <td class="center"><?php echo htmlentities($cnt);?></td>
                                             <td class="center"><?php echo htmlentities($result->AuthorName);?></td>

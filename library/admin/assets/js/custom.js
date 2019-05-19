@@ -31,8 +31,17 @@
             /*====================================
              WRITE YOUR   SCRIPTS  BELOW
             ======================================*/
+<<<<<<< HEAD
+		feunction getDate(){
+		 var today = new Date();
+		 
+		 document.getElementById("date").value=today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
+		 
+		}
+=======
 
 
+>>>>>>> 4185aa523a25502b0482b864bb9d9dd4d8541309
 
 
         },

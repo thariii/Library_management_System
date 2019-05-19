@@ -12,21 +12,21 @@ if(isset($_POST['update']))
 {
 $bookname=$_POST['bookname'];
 $category=$_POST['category'];
-$author=$_POST['author'];
 $isbn=$_POST['isbn'];
-$price=$_POST['price'];
+$reason=$_POST['reason'];
+$remdate=$_POST['remdate'];
 $bookid=intval($_GET['bookid']);
-$sql="update  tblbooks set BookName=:bookname,CatId=:category,AuthorId=:author,ISBNNumber=:isbn,BookPrice=:price where id=:bookid";
+$sql="update tblremovebookdetails set BookName=:bookname,Category=:category,ISBNNumber=:isbn,Reason=:reason,RemDate=:remdate where id=:bookid";
 $query = $dbh->prepare($sql);
 $query->bindParam(':bookname',$bookname,PDO::PARAM_STR);
 $query->bindParam(':category',$category,PDO::PARAM_STR);
-$query->bindParam(':author',$author,PDO::PARAM_STR);
 $query->bindParam(':isbn',$isbn,PDO::PARAM_STR);
-$query->bindParam(':price',$price,PDO::PARAM_STR);
+$query->bindParam(':reason',$reason,PDO::PARAM_STR);
+$query->bindParam(':remdate',$remdate,PDO::PARAM_STR);
 $query->bindParam(':bookid',$bookid,PDO::PARAM_STR);
 $query->execute();
 $_SESSION['msg']="Book info updated successfully";
-header('location:manage-books.php');
+header('location:remove-book.php');
 
 
 }
@@ -38,7 +38,7 @@ header('location:manage-books.php');
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Online Library Management System | Edit Book</title>
+    <title>Online Library Management System | Edit Removable Book</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME STYLE  -->
@@ -58,7 +58,7 @@ header('location:manage-books.php');
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">Add Book</h4>
+                <h4 class="header-line">Edit Removable Book</h4>
                 
                             </div>
 
@@ -73,7 +73,7 @@ Book Info
 <form role="form" method="post">
 <?php 
 $bookid=intval($_GET['bookid']);
-$sql = "SELECT tblbooks.BookName,tblcategory.CategoryName,tblcategory.id as cid,tblauthors.AuthorName,tblauthors.id as athrid,tblbooks.ISBNNumber,tblbooks.BookPrice,tblbooks.id as bookid from  tblbooks join tblcategory on tblcategory.id=tblbooks.CatId join tblauthors on tblauthors.id=tblbooks.AuthorId where tblbooks.id=:bookid";
+$sql = "SELECT tblremovebookdetails.BookName,tblremovebookdetails.Category,tblremovebookdetails.ISBNNumber,tblremovebookdetails.Reason,tblremovebookdetails.RemDate,tblremovebookdetails.id as bookid from tblremovebookdetails where tblremovebookdetails.id=:bookid";
 $query = $dbh -> prepare($sql);
 $query->bindParam(':bookid',$bookid,PDO::PARAM_STR);
 $query->execute();
@@ -89,27 +89,15 @@ foreach($results as $result)
 <input class="form-control" type="text" name="bookname" value="<?php echo htmlentities($result->BookName);?>" required />
 </div>
 
+
 <div class="form-group">
 <label> Category<span style="color:red;">*</span></label>
 <select class="form-control" name="category" required="required">
-<<<<<<< HEAD
-<option value="<?php echo htmlentities($result->cid);?>"> <?php echo htmlentities($catname=$result->Category);?></option>
-=======
-<option value="<?php echo htmlentities($result->cid);?>"> <?php echo htmlentities($catname=$result->CategoryName);?></option>
->>>>>>> 4185aa523a25502b0482b864bb9d9dd4d8541309
+<option value="<?php echo htmlentities($result->CategoryName);?>"> <?php echo htmlentities($catname=$result->Category);?></option>
 <?php 
 $status=1;
 $sql1 = "SELECT * from  tblcategory where Status=:status";
 $query1 = $dbh -> prepare($sql1);
-<<<<<<< HEAD
-$query1->execute();
-$results=$query1->fetchAll(PDO::FETCH_OBJ);
-if($query1->rowCount() > 0)
-{
-foreach($results as $row)
-{           
-if($catname==$row->Category)
-=======
 $query1-> bindParam(':status',$status, PDO::PARAM_STR);
 $query1->execute();
 $resultss=$query1->fetchAll(PDO::FETCH_OBJ);
@@ -118,47 +106,17 @@ if($query1->rowCount() > 0)
 foreach($resultss as $row)
 {           
 if($catname==$row->CategoryName)
->>>>>>> 4185aa523a25502b0482b864bb9d9dd4d8541309
 {
 continue;
 }
 else
 {
     ?>  
-<<<<<<< HEAD
-<option value="<?php echo htmlentities($row->CategoryName);?>"><?php echo htmlentities($row->Category);?></option>
-=======
-<option value="<?php echo htmlentities($row->id);?>"><?php echo htmlentities($row->CategoryName);?></option>
->>>>>>> 4185aa523a25502b0482b864bb9d9dd4d8541309
+<option value="<?php echo htmlentities($row->CategoryName);?>"><?php echo htmlentities($row->CategoryName);?></option>
  <?php }}} ?> 
 </select>
 </div>
 
-
-<div class="form-group">
-<label> Author<span style="color:red;">*</span></label>
-<select class="form-control" name="author" required="required">
-<option value="<?php echo htmlentities($result->athrid);?>"> <?php echo htmlentities($athrname=$result->AuthorName);?></option>
-<?php 
-
-$sql2 = "SELECT * from  tblauthors ";
-$query2 = $dbh -> prepare($sql2);
-$query2->execute();
-$result2=$query2->fetchAll(PDO::FETCH_OBJ);
-if($query2->rowCount() > 0)
-{
-foreach($result2 as $ret)
-{           
-if($athrname==$ret->AuthorName)
-{
-continue;
-} else{
-
-    ?>  
-<option value="<?php echo htmlentities($ret->id);?>"><?php echo htmlentities($ret->AuthorName);?></option>
- <?php }}} ?> 
-</select>
-</div>
 
 <div class="form-group">
 <label>ISBN Number<span style="color:red;">*</span></label>
@@ -167,10 +125,29 @@ continue;
 </div>
 
  <div class="form-group">
+ <label>Reason<span style="color:red;">*</span></label>
+ <input class="form-control" type="text" name="reason" value="<?php echo htmlentities($result->Reason);?>"   required="required" />
+ </div>
+
+<div class="form-group">
+<label>Date<span style="color:red;">*</span></label>
+<input class="form-control" type="date" name="remdate" value="<?php echo htmlentities($result->RemDate);?>" required="required" readonly />
+<?php
+$bookid=intval($_GET['bookid']);
+$sql2= "SELECT RemDate from tblremovebookdetails where tblremovebookdetails.id=:bookid";
+$query2=$dbh -> prepare($sql);
+$query2->bindParam('bookid',$bookid,PDO::PARAM_STR);
+$query2->execute();
+$results=$query->fetchAll(PDO::FETCH_OBJ);
+?>
+</div>
+
+<!--   <div class="form-group">
  <label>Price in USD<span style="color:red;">*</span></label>
  <input class="form-control" type="text" name="price" value="<?php echo htmlentities($result->BookPrice);?>"   required="required" />
- </div>
- <?php }} ?>
+ </div> -->
+<?php }} ?>
+
 <button type="submit" name="update" class="btn btn-info">Update </button>
 
                                     </form>

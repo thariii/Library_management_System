@@ -10,12 +10,12 @@ else{
 if(isset($_GET['del']))
 {
 $id=$_GET['del'];
-$sql = "delete from tblcategory  WHERE id=:id";
+$sql = "delete from tblremovebookdetails WHERE id=:id";
 $query = $dbh->prepare($sql);
 $query -> bindParam(':id',$id, PDO::PARAM_STR);
 $query -> execute();
 $_SESSION['delmsg']="Category deleted scuccessfully ";
-header('location:manage-categories.php');
+header('location:remove-book.php');
 
 }
 
@@ -28,7 +28,7 @@ header('location:manage-categories.php');
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Online Library Management System | Manage Categories</title>
+    <title>Online Library Management System | Manage Books</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME STYLE  -->
@@ -49,7 +49,7 @@ header('location:manage-categories.php');
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">Manage Categories</h4>
+                <h4 class="header-line">Removable Books</h4>
     </div>
      <div class="row">
     <?php if($_SESSION['error']!="")
@@ -104,7 +104,7 @@ header('location:manage-categories.php');
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                           Categories Listing
+                           Books Listing
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -112,15 +112,16 @@ header('location:manage-categories.php');
                                     <thead>
                                         <tr>
                                             <th>#</th>
+                                            <th>Book Name</th>
                                             <th>Category</th>
-                                            <th>Status</th>
-                                            <th>Creation Date</th>
-                                            <th>Updation Date</th>
+                                            <th>ISBN</th>
+                                            <th>Reason</th>
+                                            <th>Date</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-<?php $sql = "SELECT * from  tblcategory";
+<?php $sql = "SELECT tblremovebookdetails.BookName,tblremovebookdetails.Category,tblremovebookdetails.ISBNNumber,tblremovebookdetails.Reason,tblremovebookdetails.RemDate,tblremovebookdetails.id as bookid from tblremovebookdetails";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -131,36 +132,31 @@ foreach($results as $result)
 {               ?>                                      
                                         <tr class="odd gradeX">
                                             <td class="center"><?php echo htmlentities($cnt);?></td>
-                                            <td class="center"><?php echo htmlentities($result->CategoryName);?></td>
-                                            <td class="center"><?php if($result->Status==1) {?>
-                                            <a href="#" class="btn btn-success btn-xs">Active</a>
-                                            <?php } else {?>
-                                            <a href="#" class="btn btn-danger btn-xs">Inactive</a>
-                                            <?php } ?></td>
-                                            <td class="center"><?php echo htmlentities($result->CreationDate);?></td>
-                                            <td class="center"><?php echo htmlentities($result->UpdationDate);?></td>
+                                            <td class="center"><?php echo htmlentities($result->BookName);?></td>
+                                            <td class="center"><?php echo htmlentities($result->Category);?></td>
+                                            <td class="center"><?php echo htmlentities($result->ISBNNumber);?></td>
+                                            <td class="center"><?php echo htmlentities($result->Reason);?></td>
+                                            <td class="center"><?php echo htmlentities($result->RemDate);?></td>
                                             <td class="center">
 
-                                            <a href="edit-category.php?catid=<?php echo htmlentities($result->id);?>"><button class="btn btn-primary"><i class="fa fa-edit "></i> Edit</button> 
-                                          <a href="manage-categories.php?del=<?php echo htmlentities($result->id);?>" onclick="return confirm('Are you sure you want to delete?');"" >  <button class="btn btn-danger"><i class="fa fa-pencil"></i> Delete</button>
+                                            <a href="edit-remove-book.php?bookid=<?php echo htmlentities($result->bookid);?>"><button class="btn btn-primary"><i class="fa fa-edit "></i> Edit</button> 
+                                            <a href="remove-book.php?del=<?php echo htmlentities($result->bookid);?>" onclick="return confirm('Are you sure you want to delete?');"" >  <button class="btn btn-danger"><i class="fa fa-pencil"></i> Delete</button> 
                                             </td>
                                         </tr>
  <?php $cnt=$cnt+1;}} ?>                                      
                                     </tbody>
                                 </table>
                             </div>
-                            
+
                         </div>
                     </div>
                     <!--End Advanced Tables -->
                 </div>
+
+                <button class="btn btn-primary">Report</button>
             </div>
 
-<<<<<<< HEAD
 
-=======
-             <a href="categortReport.php">View Report</a>
->>>>>>> 4185aa523a25502b0482b864bb9d9dd4d8541309
             
     </div>
     </div>

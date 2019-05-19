@@ -3,7 +3,11 @@
 define('DB_HOST','localhost');
 define('DB_USER','root');
 define('DB_PASS','');
+<<<<<<< HEAD
+define('DB_NAME','library_itp');
+=======
 define('DB_NAME','library');
+>>>>>>> 4185aa523a25502b0482b864bb9d9dd4d8541309
 // Establish database connection.
 try
 {

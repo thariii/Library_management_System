@@ -15,8 +15,12 @@ else{
 <<<<<<< HEAD
 <html xmlns="http://www.w3.org/1999/xhtml">
 =======
+<<<<<<< HEAD
+<html xmlns="http://www.w3.org/1999/xhtml">
+=======
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:color="http://www.w3.org/1999/xhtml">
 >>>>>>> ee5b3a80afef05d33093f7e5ee32e1c679c0a22e
+>>>>>>> 4185aa523a25502b0482b864bb9d9dd4d8541309
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -146,15 +150,23 @@ foreach($results as $result)
                     <!--End Advanced Tables -->
                 </div>
             </div>
+<<<<<<< HEAD
+
+
+=======
              <a href="issueBookReport.php">View Report</a>
+>>>>>>> 4185aa523a25502b0482b864bb9d9dd4d8541309
             
     </div>
     </div>
 
      <!-- CONTENT-WRAPPER SECTION END-->
+<<<<<<< HEAD
+=======
 
 
       <!-- CONTENT-WRAPPER SECTION END-->
+>>>>>>> 4185aa523a25502b0482b864bb9d9dd4d8541309
   <?php include('includes/footer.php');?>
       <!-- FOOTER SECTION END-->
     <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->

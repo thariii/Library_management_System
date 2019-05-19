@@ -35,6 +35,8 @@
                                 </ul>
                             </li>
                             <li>
+<<<<<<< HEAD
+=======
                                 <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown"> Manage Fines <i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="Book_OverDue.php">Over Due</a></li>
@@ -43,6 +45,7 @@
                             </li>
                             <li>
 
+>>>>>>> 4185aa523a25502b0482b864bb9d9dd4d8541309
                                 <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown"> Authors <i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="add-author.php">Add Author</a></li>
@@ -64,6 +67,17 @@
                                      <li role="presentation"><a role="menuitem" tabindex="-1" href="manage-issued-books.php">Manage Issued Books</a></li>
                                 </ul>
                             </li>
+<<<<<<< HEAD
+
+                            <li>
+                                <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown"> Removable Books <i class="fa fa-angle-down"></i></a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="add-removing-book.php">Add Removable Book</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="remove-book.php">Removable Book Management </a></li>
+                                </ul>
+                            </li>
+
+=======
                              <li>
                                 <a href="#" class="dropdown-toggle" id="ddlmenuItem" data-toggle="dropdown">Inventory<i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
@@ -71,6 +85,7 @@
                                      <li role="presentation"><a role="menuitem" tabindex="-1" href="inventory-management.php">Manage Inventory</a></li>
                                 </ul>
                             </li>
+>>>>>>> 4185aa523a25502b0482b864bb9d9dd4d8541309
                              <li><a href="reg-students.php">Reg Students</a></li>
                     
   <li><a href="change-password.php">Change Password</a></li>
